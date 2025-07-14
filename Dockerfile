@@ -44,7 +44,10 @@ RUN apt-get install -y ros-${ROS_DISTRO}-bondcpp \
     ros-${ROS_DISTRO}-behaviortree-cpp-v3 \
     lcov \
     python3-zmq \
-    ros-${ROS_DISTRO}-rmw-cyclonedds-cpp
+    ros-${ROS_DISTRO}-rmw-cyclonedds-cpp \
+    ros-${ROS_DISTRO}-octomap  \
+    ros-${ROS_DISTRO}-octomap-server \
+    vim
 
 COPY other_ws/src /root/other_ws/src
 RUN cd /root/other_ws && apt-get update && apt-get update --fix-missing && rosdep install --from-paths src --ignore-src -r -y
