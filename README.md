@@ -6,7 +6,7 @@
 ![Jazzy](https://github.com/suchetanrs/gz-sim-environment/actions/workflows/build_jazzy.yml/badge.svg?branch=jazzy)
 ![Humble](https://github.com/suchetanrs/gz-sim-environment/actions/workflows/build_humble.yml/badge.svg?branch=humble)
 
-1. Run ```git clone https://github.com/suchetanrs/gz-sim-environment -b rolling && cd gz-sim-environment```
+1. Run ```git clone https://github.com/sparx-mth/gz-sim-environment -b rolling && cd gz-sim-environment```
 2. ```echo "xhost +" >> ~/.bashrc && source ~/.bashrc``` you can ignore if done already.
 3. ```sudo chmod +x install-nvidia-container-toolkit.sh```
 4. ```./install-nvidia-container-toolkit.sh```
