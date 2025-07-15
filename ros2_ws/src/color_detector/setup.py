@@ -21,8 +21,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'color_detector_node = color_detector.color_detector_node:main',
+            'color_finder_node = color_detector.color_finder_node:main',
             'azimuth_computer_node = color_detector.azimuth_computer_node:main',
+            'azimuth_computer_node_0 = color_detector.azimuth_computer_node_0:main',
+
         ],
     },
 )

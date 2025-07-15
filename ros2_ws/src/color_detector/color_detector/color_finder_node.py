@@ -12,7 +12,11 @@ class ColorFinder(Node):
     def __init__(self):
         super().__init__('color_finder_node')
 
-        self.declare_parameter('camera_topic', '/robot_0/rgb_camera')
+        #self.declare_parameter('camera_topic', '/robot_0/rgb_camera')
+        #self.declare_parameter('color', 'blue')
+
+
+        self.declare_parameter('camera_topic', '/robot_1/rgb_camera')
         self.declare_parameter('color', 'red')
 
         self.camera_topic = self.get_parameter('camera_topic').get_parameter_value().string_value
@@ -41,8 +45,27 @@ class ColorFinder(Node):
         contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
         if contours:
+            c = max(contours, key=cv2.contourArea)
+            x, y, w, h = cv2.boundingRect(c)
+
+            # Draw bounding box
+            cv2.rectangle(cv_image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+            # Optional: Draw center point
+            cx = int(x + w / 2)
+            cy = int(y + h / 2)
+            cv2.circle(cv_image, (cx, cy), 4, (255, 0, 0), -1)
+
+            # Show image
+            cv2.imshow("Detected Object", cv_image)
+            cv2.waitKey(1)
+
             self.get_logger().info("Target color detected. Sending trigger.")
-            self.trigger_pub.publish(Empty())  
+            self.trigger_pub.publish(Empty())
+        else:
+            # Show image without detection
+            cv2.imshow("Detected Object", cv_image)
+            cv2.waitKey(1)
             self.get_logger().info("No target color detected.")
 
 def main(args=None):

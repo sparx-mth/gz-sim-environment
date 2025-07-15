@@ -15,7 +15,7 @@ class AzimuthComputer(Node):
     def __init__(self):
         super().__init__('azimuth_computer_node')
 
-        self.declare_parameter('camera_topic', '/robot_1/rgb_camera')
+        self.declare_parameter('camera_topic', '/robot_0/rgb_camera')
         self.camera_topic = self.get_parameter('camera_topic').get_parameter_value().string_value
 
         drone_name = self.camera_topic.split('/')[1]
@@ -69,8 +69,7 @@ class AzimuthComputer(Node):
         img_w = cv_image.shape[1]
 
         hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
-        mask = cv2.inRange(hsv, (0, 150, 120), (10, 255, 255)) + \
-               cv2.inRange(hsv, (170, 150, 120), (180, 255, 255))
+        mask = cv2.inRange(hsv, (100, 150, 0), (140, 255, 255))
 
         contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
