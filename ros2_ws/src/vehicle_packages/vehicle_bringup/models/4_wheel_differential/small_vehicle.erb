@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.8">
 
+
 <%
   robot_name = robot_name
   robot_x = robot_x
@@ -352,9 +353,9 @@
                 </geometry>
                 <!--Color of the link-->
                 <material>
-                    <ambient>1, 1, 0.5, 1.0</ambient>
-                    <diffuse>1, 1, 0.5, 1.0</diffuse>
-                    <specular>1, 1, 0.5, 1.0</specular>
+                    <ambient><%= body_color %></ambient>
+                    <diffuse><%= body_color %></diffuse>
+                    <specular><%= body_color %></specular>
                 </material>
             </visual>
             <collision name='collision'>
