@@ -1,223 +1,452 @@
 import os
 
+
+
 from ament_index_python.packages import get_package_share_directory
+
 from launch import LaunchContext, LaunchDescription
+
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
+
 from launch.substitutions import LaunchConfiguration
+
 from launch_ros.actions import Node
+
 import xacro
+
 import subprocess
 
+
+
 robot_coordinates = {
+
     # 0: [-3.22, -5.62, 1.65], # playpen featureless
+
     # 0: [-1.0, -1.0, 1.65], 
+
     # 0: [-5.0, 0.0, 2.5], # cave world
+
     # 0: [-15.0, -15.0, 2.5], # marsyard
+
     0: [-5.0, -7.0, 1.0],  # corridor
+
     1: [-1.0, 0.0, 1.65],
+
     2: [5.0, 5.0, 1.65],
+
     3: [-1.0, 8.0, 1.65],
+
     4: [7.0, 8.0, 1.65],
+
     5: [7.0, 8.0, 1.65]
+
 }
 
+robot_colors = {
+    0: "1.0 0.0 0.0 1.0",  # ❤️ Red  
+    1: "0.0 0.0 1.0 1.0",  # 💙 Blue
+}
+
+
 robot_model_type = "small_vehicle"
+
 # you can choose from:
+
 # model, model_with_2_lidar, small_vehicle, small_vehicle_vert_lidar, small_vehicle_2d_lidar
 
+
+
 def spawn_robot(context: LaunchContext, namespace: LaunchConfiguration, body_color: LaunchConfiguration, rotor_color: LaunchConfiguration):
+
     pkg_project_description = get_package_share_directory("vehicle_bringup")
+
     robot_ns = namespace.perform(context)
+
     # Extract robot index from namespace
+
     if (robot_ns == ""):
+
         robot_idx = 0
+
     else:
+
         # Handle both "robot_0/" and "ns0/" style namespaces
+
         import re
+
         match = re.search(r'(\d+)', robot_ns)
+
         if match:
+
             robot_idx = int(match.group(1))
+
         else:
+
             robot_idx = 0
 
+
+
     robot_idx_str = str(robot_idx)
+
     print(f"IDX of the robot: {robot_idx}")
 
+    body_color_value = robot_colors.get(robot_idx, "1.0 1.0 1.0 1.0")
+
+
+
+
     erb_file = os.path.join(pkg_project_description, 'models', '4_wheel_differential', robot_model_type + '.erb')
+
     rb_file = os.path.join(pkg_project_description, 'models', '4_wheel_differential', 'model.rb')
+
     print(f"ruby {rb_file} \"{robot_ns}\" {erb_file} /tmp/model_{robot_idx_str}.sdf {robot_coordinates[robot_idx][0]} {robot_coordinates[robot_idx][1]}")
-    process = subprocess.run(f"ruby {rb_file} \"{robot_ns}\" {erb_file} /tmp/model_{robot_idx_str}.sdf {robot_coordinates[robot_idx][0]} {robot_coordinates[robot_idx][1]}", shell=True, check=True)
+
+    process = subprocess.run(f"ruby {rb_file} \"{robot_ns}\" {erb_file} /tmp/model_{robot_idx_str}.sdf {robot_coordinates[robot_idx][0]} {robot_coordinates[robot_idx][1]} \"{body_color_value}\"", shell=True, check=True)
+
+
 
     with open(f"/tmp/model_{robot_idx_str}.sdf", 'r') as infp:
+
         robot_desc = infp.read()
+
+
 
     twist_mux_param_file = os.path.join(pkg_project_description, 'params', 'twist_mux.yaml')
 
+
+
     # Spawn a robot inside a simulation
+
     spawn_robot = Node(
+
         package="ros_gz_sim",
+
         executable="create",
+
         name="ros_gz_sim_create_" + robot_idx_str,  # Made name unique
+
         output="both",
+
         arguments=[
+
             "-string",
+
             robot_desc,  # Pass the SDF content directly
+
             "-name",
+
             robot_ns.rstrip('/'),  # Remove trailing slash for model name
+
             "-x",
+
             str(robot_coordinates[robot_idx][0]),
+
             "-y",
+
             str(robot_coordinates[robot_idx][1]),
+
             "-z",
+
             str(robot_coordinates[robot_idx][2]),
+
         ],
+
     )
+
+
 
     # Launch robot state publisher node
+
     robot_state_publisher = Node(
+
         package="robot_state_publisher",
+
         executable="robot_state_publisher",
+
         name="robot_state_publisher",
+
         namespace=robot_ns,
+
         output="both",
+
         parameters=[
+
             {"use_sim_time": True},
+
             {"robot_description": robot_desc},
+
         ],
+
     )
+
+
 
     # Bridge ROS topics and Gazebo messages for establishing communication
+
     topic_bridge = Node(
+
         package="ros_gz_bridge",
+
         executable="parameter_bridge",
+
         name="parameter_bridge_" + robot_idx_str,  # Unique name to avoid conflicts
+
         arguments=[
+
             robot_ns + "cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist",
+
             robot_ns + "ground_truth_pose@nav_msgs/msg/Odometry[gz.msgs.Odometry",
+
             robot_ns + "odom_differential@nav_msgs/msg/Odometry[gz.msgs.Odometry",
+
             robot_ns + "imu@sensor_msgs/msg/Imu[gz.msgs.IMU",
+
             robot_ns + "joint_states@sensor_msgs/msg/JointState[gz.msgs.Model",
+
             robot_ns + "lidar/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked",
+
             robot_ns + "lidar_vertical/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked",
+
             # robot_ns + "depth_camera/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked",
+
             robot_ns + "lidar_2d/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked",
+
             robot_ns + "camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",  # depth camera info
+
             robot_ns + "rgb_camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo"  # rgb camera info
+
         ],
+
         parameters=[
+
             {
+
                 "qos_overrides./tf_static.publisher.durability": "transient_local",
+
             }
+
         ],
+
         output="screen",
+
     )
+
+
 
     # Camera image bridge
+
     image_bridge_rgb = Node(
+
         package="ros_gz_image",
+
         executable="image_bridge",
+
         name="image_bridge_rgb_" + robot_idx_str,  # Unique name to avoid conflicts
+
         arguments=[robot_ns + 'rgb_camera'],  # Need full topic path for Gazebo
+
         output="screen"
+
     )
+
+
 
     bridge = Node(
+
         package='ros_gz_image',
+
         executable='image_bridge',
+
         name="image_bridge_depth_" + robot_idx_str,  # Unique name to avoid conflicts
+
         arguments=[robot_ns + 'depth_camera'],  # Need full topic path for Gazebo
+
         output='screen'
+
     )
+
+
 
     key_teleop_cmd = Node(
+
         package="teleop_twist_keyboard",
+
         executable="teleop_twist_keyboard",
+
         namespace=robot_ns,
+
         parameters=[{'speed': '0.4'}],
+
         prefix=[f"xterm -T 'Robot {robot_idx} Teleop' -e"],
+
         remappings=[('cmd_vel', 'cmd_vel_teleop')],
+
     )
+
+
 
     twist_mux_cmd = Node(
+
             package="twist_mux",
+
             executable="twist_mux",
+
             namespace=robot_ns,
+
             parameters=[twist_mux_param_file],
+
             remappings=[('cmd_vel_out','cmd_vel')]
+
     )
+
+
 
     pcl_to_laserscan = Node(
+
         package='pointcloud_to_laserscan',
+
         executable='pointcloud_to_laserscan_node',
+
         name='pointcloud_to_laserscan',
+
         namespace=robot_ns,
+
         parameters=[{
+
             'target_frame': robot_ns.rstrip('/') + '/base_link',
+
             'min_height': -3.0,
+
             'max_height': 3.0,
+
             'angle_min': -3.139,  # -90 degrees
+
             'angle_max': 3.139,   # 90 degrees
+
             'angle_increment': 0.01,
+
             'scan_time': 0.1,
+
             'range_min': 0.5,
+
             'range_max': 10.0,
+
             'use_inf': True,
+
             "use_sim_time": True
+
         }],
+
         remappings=[
+
             ('cloud_in', "lidar_2d/points"),
+
             ('scan', "scan")
+
         ]
+
     )
+
+
 
     # publishes the odom -> base_footprint tf
+
     publish_gt_odom_tf = Node(
+
         package='ground_truth_localization',
+
         executable='publish_tf',
+
         name='publish_tf',  # Don't append idx
+
         namespace=robot_ns,  # Use proper namespace
+
         parameters=[{"publish_map_to_odom_tf": False,
+
                      "use_sim_time": True}],
+
         output='screen'
+
     )
+
+
 
     return [
+
         spawn_robot,
+
         robot_state_publisher,
+
         topic_bridge,
+
         image_bridge_rgb,
+
         key_teleop_cmd,
+
         bridge,
+
         twist_mux_cmd,
+
         pcl_to_laserscan,
+
 #        publish_gt_odom_tf
+
     ]
 
+
+
 def generate_launch_description():
+
     name_argument = DeclareLaunchArgument(
+
         "robot_ns",
+
         default_value="robot_0/",  # Changed default to match expected format
+
         description="Robot namespace",
+
     )
 
+
+
     body_color = DeclareLaunchArgument(
+
         "body_color",
+
         default_value="1.0 0.0 0.0 1.0",  # Default Red color
+
         description="Body color for the robot",
+
     )
+
     rotor_color = DeclareLaunchArgument(
+
         "rotor_color",
+
         default_value="0.0 1.0 0.0 1.0",  # Default Green color
+
         description="Rotor color for the robot",
+
     )
+
+
 
     namespace = LaunchConfiguration("robot_ns")
 
+
+
     return LaunchDescription(
+
         [
+
             name_argument,
+
             body_color,
+
             rotor_color,
+
             OpaqueFunction(function=spawn_robot, args=[namespace, body_color, rotor_color]),
+
         ]
+
     )

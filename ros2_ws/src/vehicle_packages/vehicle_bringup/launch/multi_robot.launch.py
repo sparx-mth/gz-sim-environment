@@ -30,6 +30,7 @@ def generate_launch_description():
     # inspection.sdf
     # marsyard2022.sdf
 
+
     # Bridge ROS topics and Gazebo messages for establishing communication
     topic_bridge = Node(
         package="ros_gz_bridge",
@@ -54,7 +55,7 @@ def generate_launch_description():
             ),
             launch_arguments={"robot_ns": f"robot_{i}/"}.items(),
         )
-        for i in range(0, 3)
+        for i in range(0, 2)
     ]
 
     return LaunchDescription(
@@ -62,4 +63,4 @@ def generate_launch_description():
             gz_sim,
             topic_bridge,
         ] + spawn_robots
-        ) 
+    )
