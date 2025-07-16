@@ -55,7 +55,11 @@ def generate_launch_description():
             ),
             launch_arguments={"robot_ns": f"robot_{i}/"}.items(),
         )
+<<<<<<< Updated upstream
         for i in range(0, 2)
+=======
+        for i in range(0, 1)
+>>>>>>> Stashed changes
     ]
 
     return LaunchDescription(
