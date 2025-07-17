@@ -2560,11 +2560,17 @@
 
 
 
-<!-- Horizontal interior wall using jersey_barrier -->
 <model name='jersey_barrier_internal_1'>
   <static>1</static>
   <link name='link'>
-    <pose>4 -3 0 0 0 1.5708</pose> <!-- Rotate 90 degrees -->
+    <pose>4 -3 0 0 0 1.5708</pose>
+    <collision name='collision'>
+      <geometry>
+        <box>
+          <size>4.06542 0.3063 1.143</size>
+        </box>
+      </geometry>
+    </collision>
     <visual name='visual'>
       <geometry>
         <mesh>
@@ -2573,14 +2579,20 @@
       </geometry>
     </visual>
   </link>
-  <pose>5 0 0 0 0 1.5708</pose> <!-- Centered horizontally -->
+  <pose>5 0 0 0 0 1.5708</pose>
 </model>
 
-<!-- Horizontal interior wall using jersey_barrier -->
 <model name='jersey_barrier_internal_10'>
   <static>1</static>
   <link name='link'>
-    <pose>4 2 0 0 0 1.5708</pose> <!-- Rotate 90 degrees -->
+    <pose>4 2 0 0 0 1.5708</pose>
+    <collision name='collision'>
+      <geometry>
+        <box>
+          <size>4.06542 0.3063 1.143</size>
+        </box>
+      </geometry>
+    </collision>
     <visual name='visual'>
       <geometry>
         <mesh>
@@ -2589,14 +2601,20 @@
       </geometry>
     </visual>
   </link>
-  <pose>5 0 0 0 0 1.5708</pose> <!-- Centered horizontally -->
+  <pose>5 0 0 0 0 1.5708</pose>
 </model>
 
-<!-- Horizontal interior wall using jersey_barrier -->
 <model name='jersey_barrier_internal_20'>
   <static>1</static>
   <link name='link'>
-    <pose>-3 4 0 0 0 0</pose> <!-- Rotate 90 degrees -->
+    <pose>-3 4 0 0 0 0</pose>
+    <collision name='collision'>
+      <geometry>
+        <box>
+          <size>4.06542 0.3063 1.143</size>
+        </box>
+      </geometry>
+    </collision>
     <visual name='visual'>
       <geometry>
         <mesh>
@@ -2605,14 +2623,20 @@
       </geometry>
     </visual>
   </link>
-  <pose>5 0 0 0 0 1.5708</pose> <!-- Centered horizontally -->
+  <pose>5 0 0 0 0 1.5708</pose>
 </model>
 
-<!-- Horizontal interior wall using jersey_barrier -->
 <model name='jersey_barrier_internal_2'>
   <static>1</static>
   <link name='link'>
-    <pose>1 4 0 0 0 0</pose> <!-- Rotate 90 degrees -->
+    <pose>1 4 0 0 0 0</pose>
+    <collision name='collision'>
+      <geometry>
+        <box>
+          <size>4.06542 0.3063 1.143</size>
+        </box>
+      </geometry>
+    </collision>
     <visual name='visual'>
       <geometry>
         <mesh>
@@ -2621,17 +2645,20 @@
       </geometry>
     </visual>
   </link>
-  <pose>5 0 0 0 0 1.5708</pose> <!-- Centered horizontally -->
+  <pose>5 0 0 0 0 1.5708</pose>
 </model>
 
-
-
-
-<!-- Horizontal interior wall using jersey_barrier -->
 <model name='jersey_barrier_internal_30'>
   <static>1</static>
   <link name='link'>
-    <pose>-3 10 0 0 0 0</pose> <!-- Rotate 90 degrees -->
+    <pose>-3 10 0 0 0 0</pose>
+    <collision name='collision'>
+      <geometry>
+        <box>
+          <size>4.06542 0.3063 1.143</size>
+        </box>
+      </geometry>
+    </collision>
     <visual name='visual'>
       <geometry>
         <mesh>
@@ -2640,14 +2667,20 @@
       </geometry>
     </visual>
   </link>
-  <pose>5 0 0 0 0 1.5708</pose> <!-- Centered horizontally -->
+  <pose>5 0 0 0 0 1.5708</pose>
 </model>
 
-<!-- Horizontal interior wall using jersey_barrier -->
 <model name='jersey_barrier_internal_3'>
   <static>1</static>
   <link name='link'>
-    <pose>1 10 0 0 0 0</pose> <!-- Rotate 90 degrees -->
+    <pose>1 10 0 0 0 0</pose>
+    <collision name='collision'>
+      <geometry>
+        <box>
+          <size>4.06542 0.3063 1.143</size>
+        </box>
+      </geometry>
+    </collision>
     <visual name='visual'>
       <geometry>
         <mesh>
@@ -2656,15 +2689,20 @@
       </geometry>
     </visual>
   </link>
-  <pose>5 0 0 0 0 1.5708</pose> <!-- Centered horizontally -->
+  <pose>5 0 0 0 0 1.5708</pose>
 </model>
 
-
-<!-- Horizontal interior wall using jersey_barrier -->
 <model name='jersey_barrier_internal_4'>
   <static>1</static>
   <link name='link'>
-    <pose>-5 13 0 0 0 1.5708</pose> <!-- Rotate 90 degrees -->
+    <pose>-5 13 0 0 0 1.5708</pose>
+    <collision name='collision'>
+      <geometry>
+        <box>
+          <size>4.06542 0.3063 1.143</size>
+        </box>
+      </geometry>
+    </collision>
     <visual name='visual'>
       <geometry>
         <mesh>
@@ -2673,7 +2711,7 @@
       </geometry>
     </visual>
   </link>
-  <pose>5 0 0 0 0 1.5708</pose> <!-- Centered horizontally -->
+  <pose>5 0 0 0 0 1.5708</pose>
 </model>
 
     <model name='Untitled'>
