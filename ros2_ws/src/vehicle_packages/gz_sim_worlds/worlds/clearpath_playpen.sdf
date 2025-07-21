@@ -2556,11 +2556,10 @@
 
 
 
-
 <model name='jersey_barrier_internal_1'>
   <static>1</static>
   <link name='link'>
-    <pose>4 -3 0 0 0 1.5708</pose>
+    <pose>3 -2 0 0 0 1.5708</pose>
     <collision name='collision'>
       <geometry>
         <box>
@@ -2582,7 +2581,7 @@
 <model name='jersey_barrier_internal_10'>
   <static>1</static>
   <link name='link'>
-    <pose>4 2 0 0 0 1.5708</pose>
+    <pose>3 2 0 0 0 1.5708</pose>
     <collision name='collision'>
       <geometry>
         <box>
@@ -2601,114 +2600,120 @@
   <pose>5 0 0 0 0 1.5708</pose>
 </model>
 
-<model name='jersey_barrier_internal_20'>
-  <static>1</static>
+    <model name='nist_maze_wall_12011'>
+      <static>true</static>
+      <link name='nist_maze_wall_120_link'>
+        <pose>-1 -19 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://nist_maze_wall_120/meshes/nist_maze_wall_120.dae</uri>
+              <scale>4 1 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://nist_maze_wall_120/meshes/nist_maze_wall_120.dae</uri>
+              <scale>4 1 2</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>1.8 8.9 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+
+<model name='ambulance_barrier_1'>
+  <pose>2 1 0 0 0 1.5708</pose>
+  <static>true</static>
   <link name='link'>
-    <pose>-3 4 0 0 0 0</pose>
     <collision name='collision'>
       <geometry>
-        <box>
-          <size>4.06542 0.3063 1.143</size>
-        </box>
+        <mesh>
+          <scale>0.03 0.003 0.01</scale>
+          <uri>model://ambulance/meshes/ambulance.obj</uri>
+        </mesh>
       </geometry>
     </collision>
     <visual name='visual'>
       <geometry>
         <mesh>
-          <uri>model://jersey_barrier/meshes/jersey_barrier.dae</uri>
+          <scale>0.03 0.003 0.01</scale>
+          <uri>model://ambulance/meshes/ambulance.obj</uri>
         </mesh>
       </geometry>
     </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
   </link>
-  <pose>5 0 0 0 0 1.5708</pose>
+  <self_collide>false</self_collide>
 </model>
 
-<model name='jersey_barrier_internal_2'>
-  <static>1</static>
-  <link name='link'>
-    <pose>1 4 0 0 0 0</pose>
-    <collision name='collision'>
-      <geometry>
-        <box>
-          <size>4.06542 0.3063 1.143</size>
-        </box>
-      </geometry>
-    </collision>
-    <visual name='visual'>
-      <geometry>
-        <mesh>
-          <uri>model://jersey_barrier/meshes/jersey_barrier.dae</uri>
-        </mesh>
-      </geometry>
-    </visual>
-  </link>
-  <pose>5 0 0 0 0 1.5708</pose>
-</model>
 
-<model name='jersey_barrier_internal_30'>
-  <static>1</static>
+<model name='ambulance_barrier_2'>
+  <pose>2 -2 0 0 0 0</pose>
+  <static>true</static>
   <link name='link'>
-    <pose>-3 10 0 0 0 0</pose>
     <collision name='collision'>
       <geometry>
-        <box>
-          <size>4.06542 0.3063 1.143</size>
-        </box>
+        <mesh>
+          <scale>0.003 0.015 0.01</scale>
+          <uri>model://ambulance/meshes/ambulance.obj</uri>
+        </mesh>
       </geometry>
     </collision>
     <visual name='visual'>
       <geometry>
         <mesh>
-          <uri>model://jersey_barrier/meshes/jersey_barrier.dae</uri>
+          <scale>0.003 0.015 0.01</scale>
+          <uri>model://ambulance/meshes/ambulance.obj</uri>
         </mesh>
       </geometry>
     </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
   </link>
-  <pose>5 0 0 0 0 1.5708</pose>
-</model>
-
-<model name='jersey_barrier_internal_3'>
-  <static>1</static>
-  <link name='link'>
-    <pose>1 10 0 0 0 0</pose>
-    <collision name='collision'>
-      <geometry>
-        <box>
-          <size>4.06542 0.3063 1.143</size>
-        </box>
-      </geometry>
-    </collision>
-    <visual name='visual'>
-      <geometry>
-        <mesh>
-          <uri>model://jersey_barrier/meshes/jersey_barrier.dae</uri>
-        </mesh>
-      </geometry>
-    </visual>
-  </link>
-  <pose>5 0 0 0 0 1.5708</pose>
-</model>
-
-<model name='jersey_barrier_internal_4'>
-  <static>1</static>
-  <link name='link'>
-    <pose>-5 13 0 0 0 1.5708</pose>
-    <collision name='collision'>
-      <geometry>
-        <box>
-          <size>4.06542 0.3063 1.143</size>
-        </box>
-      </geometry>
-    </collision>
-    <visual name='visual'>
-      <geometry>
-        <mesh>
-          <uri>model://jersey_barrier/meshes/jersey_barrier.dae</uri>
-        </mesh>
-      </geometry>
-    </visual>
-  </link>
-  <pose>5 0 0 0 0 1.5708</pose>
+  <self_collide>false</self_collide>
 </model>
 
 
@@ -2720,10 +2725,14 @@
         <visual name='Tree_1'>
           <geometry>
             <mesh>
-              <scale>0.2 0.2 0.3</scale>
+              <scale>0.6 0.6 0.6</scale>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.1 0.5 0.1 1</ambient>   <!-- Greenish -->
+            <diffuse>0.1 0.6 0.1 1</diffuse>
+          </material>
         </visual>
         <pose>0 0 0 0 0 0</pose>
         <inertial>
@@ -2754,6 +2763,10 @@
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>1 0.5 0 1</ambient>   <!-- Orange -->
+            <diffuse>1 0.6 0 1</diffuse>
+          </material>
         </visual>
         <pose>0 0 0 0 0 0</pose>
         <inertial>
@@ -2780,8 +2793,8 @@
         <visual name='Tree_3'>
           <geometry>
             <mesh>
-              <scale>0.18 0.18 0.28</scale>
-              <uri>model://Tree_1/Tree_1.dae</uri>
+              <scale>0.7 0.2 0.5</scale>
+              <uri>model://Tree_2/Tree_2.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -2834,35 +2847,44 @@
       <self_collide>false</self_collide>
     </model>
 
-    <model name='Tree_5'>
-      <static>true</static>
-      <link name='Tree_5'>
-        <visual name='Tree_5'>
-          <geometry>
-            <mesh>
-              <scale>0.19 0.19 0.29</scale>
-              <uri>model://Tree_1/Tree_1.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <pose>0 0 0 0 0 0</pose>
-          <mass>1</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>-1 9.2 0 0 0 2.5</pose>
-      <self_collide>false</self_collide>
-    </model>
+<model name='Transformers_Bumblebee_5'>
+  <static>true</static>
+  <link name='link_0'>
+    <pose>0 0 0 0 0 0</pose>
+    <visual name='visual'>
+      <geometry>
+        <mesh>
+          <uri>model://Transformers_Age_of_Extinction_Mega_1Step_Bumblebee_Figure/meshes/model.obj</uri>
+          <scale>6 6 8</scale>
+        </mesh>
+      </geometry>
+    </visual>
+    <collision name='collision_0'>
+      <geometry>
+        <mesh>
+          <uri>model://Transformers_Age_of_Extinction_Mega_1Step_Bumblebee_Figure/meshes/model.obj</uri>
+          <scale>6 6 6</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
+  </link>
+  <pose>-1.5 9.5 0 0 0 2.5</pose>
+  <self_collide>false</self_collide>
+</model>
+
 
     <model name='Tree_6'>
       <static>true</static>
@@ -2870,7 +2892,7 @@
         <visual name='Tree_5'>
           <geometry>
             <mesh>
-              <scale>0.19 0.19 0.29</scale>
+              <scale>0.19 0.39 0.1</scale>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
@@ -2894,66 +2916,85 @@
       <self_collide>false</self_collide>
     </model>
 
-    <model name='Tree_7'>
-      <static>true</static>
-      <link name='Tree_6'>
-        <visual name='Tree_6'>
-          <geometry>
-            <mesh>
-              <scale>0.23 0.23 0.33</scale>
-              <uri>model://Tree_1/Tree_1.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <pose>0 0 0 0 0 0</pose>
-          <mass>1</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>3 9 0 0 0 0.4</pose>
-      <self_collide>false</self_collide>
-    </model>
+<model name='SUV_7'>
+  <static>true</static>
+  <link name='link'>
+    <collision name='collision'>
+      <pose>0 0 0 0 0 -1.57079632679</pose>
+      <geometry>
+        <mesh>
+          <scale>0.001 0.001 0.001</scale>
+          <uri>model://suv/meshes/suv.obj</uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name='visual'>
+      <pose>0 0 0 0 0 -1.57079632679</pose>
+      <geometry>
+        <mesh>
+          <scale>0.01 0.05 0.05</scale>
+          <uri>model://suv/meshes/suv.obj</uri>
+        </mesh>
+      </geometry>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
+  </link>
+  <pose>3 9.4 0 0 0 0</pose>
+  <self_collide>false</self_collide>
+</model>
 
-    <model name='Tree_8'>
-      <static>true</static>
-      <link name='Tree_7'>
-        <visual name='Tree_7'>
-          <geometry>
-            <mesh>
-              <scale>0.21 0.21 0.31</scale>
-              <uri>model://Tree_1/Tree_1.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <pose>0 0 0 0 0 0</pose>
-          <mass>1</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>5 9.1 0 0 0 1.9</pose>
-      <self_collide>false</self_collide>
-    </model>
-
+<model name='SUV_8'>
+  <static>true</static>
+  <link name='link'>
+    <collision name='collision'>
+      <pose>0 0 0 0 0 -1.57079632679</pose>
+      <geometry>
+        <mesh>
+          <scale>0.001 0.001 0.001</scale>
+          <uri>model://suv/meshes/suv.obj</uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name='visual'>
+      <pose>0 0 0 0 0 -1.57079632679</pose>
+      <geometry>
+        <mesh>
+          <scale>0.01 0.05 0.05</scale>
+          <uri>model://suv/meshes/suv.obj</uri>
+        </mesh>
+      </geometry>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
+  </link>
+  <pose>5 9.5 0 0 0 0</pose>
+  <self_collide>false</self_collide>
+</model>
 
     <model name='Tree_9'>
       <static>true</static>
@@ -2961,7 +3002,7 @@
         <visual name='Tree_7'>
           <geometry>
             <mesh>
-              <scale>0.21 0.21 0.31</scale>
+              <scale>0.1 0.51 0.31</scale>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
@@ -2992,7 +3033,7 @@
         <visual name='Tree_7'>
           <geometry>
             <mesh>
-              <scale>0.21 0.21 0.31</scale>
+              <scale>0.51 0.1 0.31</scale>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
@@ -3018,47 +3059,48 @@
 
 
 
+<model name='thrift_shop_bus_1'>
+  <static>true</static>
+  <link name='link'>
+    <collision name='collision'>
+      <pose>0 0 5 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <scale>0.2 0.02 0.3</scale>
+          <uri>model://thrift_shop/meshes/thrift_shop.dae</uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name='visual'>
+      <pose>0 -1 0 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <scale>0.2 0.02 0.3</scale>
+          <uri>model://thrift_shop/meshes/thrift_shop.dae</uri>
+        </mesh>
+      </geometry>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
+  </link>
+  <pose>-6.5 -10.5 1 0 1.57 3.1416</pose>
+  <self_collide>false</self_collide>
+</model>
 
 
     <!-- Buses along the south wall -->
-    <model name='bus_1'>
-      <static>true</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <scale>0.001 0.001 0.001</scale>
-              <uri>model://bus/meshes/bus.obj</uri>
-            </mesh>
-          </geometry>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <scale>0.002 0.002 0.002</scale>
-              <uri>model://bus/meshes/bus.obj</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <pose>0 0 0 0 0 0</pose>
-          <mass>1</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>-8 -9.4 0 0 0 1.57</pose>
-      <self_collide>false</self_collide>
-    </model>
-
     <model name='bus_2'>
       <static>true</static>
       <link name='link'>
@@ -3073,7 +3115,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <scale>0.0018 0.0018 0.0018</scale>
+              <scale>0.001 0.003 0.0015</scale>
               <uri>model://bus/meshes/bus.obj</uri>
             </mesh>
           </geometry>
@@ -3111,7 +3153,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <scale>0.0022 0.0022 0.0022</scale>
+              <scale>0.002 0.004 0.0025</scale>
               <uri>model://bus/meshes/bus.obj</uri>
             </mesh>
           </geometry>
@@ -3149,7 +3191,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <scale>0.0019 0.0019 0.0019</scale>
+              <scale>0.0019 0.003 0.005</scale>
               <uri>model://bus/meshes/bus.obj</uri>
             </mesh>
           </geometry>
@@ -3187,7 +3229,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <scale>0.0021 0.0021 0.0021</scale>
+              <scale>0.0021 0.002 0.004</scale>
               <uri>model://bus/meshes/bus.obj</uri>
             </mesh>
           </geometry>
@@ -3261,90 +3303,155 @@
 
 
 
-    <model name='coca_cola_2'>
+<model name='fountain_2'>
+  <static>true</static>
+  <link name='link'>
+    <collision name='collision'>
+      <geometry>
+        <mesh>
+          <scale>0.01 0.01 0.01</scale>
+          <uri>model://fountain/meshes/fountain.dae</uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name='visual'>
+      <geometry>
+        <mesh>
+          <scale>0.6 0.6 0.6</scale>
+          <uri>model://fountain/meshes/fountain.dae</uri>
+        </mesh>
+      </geometry>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
+  </link>
+  <pose>-9 -7.5 0.08 0 0 0.5</pose>
+  <self_collide>false</self_collide>
+</model>
+
+ <model name='fire_hydrant_0'>
+      <static>true</static>
       <link name='link'>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <mass>0.39</mass>
-          <inertia>
-            <ixx>0.00058</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00058</iyy>
-            <iyz>0</iyz>
-            <izz>0.00019</izz>
-          </inertia>
-        </inertial>
         <collision name='collision'>
           <geometry>
-            <cylinder>
-              <radius>0.0302</radius>
-              <length>0.1206</length>
-            </cylinder>
+            <mesh>
+              <uri>model://fire_hydrant/meshes/fire_hydrant.dae</uri>
+            </mesh>
           </geometry>
+          <max_contacts>10</max_contacts>
           <surface>
+            <bounce/>
             <friction>
               <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
             </friction>
-            <bounce/>
-            <contact/>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
-        <visual name='bodyMesh'>
+        <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://coca_cola/meshes/coke.dae</uri>
-              <scale>20 20 20</scale>
+              <uri>model://fire_hydrant/meshes/fire_hydrant.dae</uri>
             </mesh>
           </geometry>
         </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>false</self_collide>
+        <kinematic>false</kinematic>
+        <gravity>true</gravity>
         <enable_wind>false</enable_wind>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
       </link>
-      <pose>9.6 -4 0.08 0 0 0.5</pose>
-      <static>true</static>
+      <pose>-9.5 5.5 0 0 0 0</pose>
       <self_collide>false</self_collide>
     </model>
 
-    <model name='coca_cola_3'>
+
+    <model name='Construction Cone'>
       <link name='link'>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <mass>0.39</mass>
-          <inertia>
-            <ixx>0.00058</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00058</iyy>
-            <iyz>0</iyz>
-            <izz>0.00019</izz>
-          </inertia>
-        </inertial>
         <collision name='collision'>
           <geometry>
-            <cylinder>
-              <radius>0.0302</radius>
-              <length>0.1206</length>
-            </cylinder>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
           </geometry>
+          <max_contacts>10</max_contacts>
           <surface>
+            <bounce/>
             <friction>
               <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
             </friction>
-            <bounce/>
-            <contact/>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
-        <visual name='bodyMesh'>
+        <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://coca_cola/meshes/coke.dae</uri>
-              <scale>18 18 18</scale>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>false</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+          <pose>0 0 0 0 0 0</pose>
+        </inertial>
+        <kinematic>false</kinematic>
+        <gravity>true</gravity>
         <enable_wind>false</enable_wind>
+        <pose>0 0 0 0 0 0</pose>
       </link>
-      <pose>9.5 -1 0.07 0 0 1.2</pose>
+      <pose>-9.5 5.5 1 0 0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -3393,93 +3500,85 @@
       <self_collide>false</self_collide>
     </model>
 
-    <model name='coca_cola_5'>
-      <link name='link'>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <mass>0.39</mass>
-          <inertia>
-            <ixx>0.00058</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00058</iyy>
-            <iyz>0</iyz>
-            <izz>0.00019</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.0302</radius>
-              <length>0.1206</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='bodyMesh'>
-          <geometry>
-            <mesh>
-              <uri>model://coca_cola/meshes/coke.dae</uri>
-              <scale>19 19 19</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>9.5 5 0.075 0 0 0.8</pose>
-      <static>true</static>
-      <self_collide>false</self_collide>
-    </model>
+<model name='SUV_coke_5'>
+  <static>true</static>
+  <link name='link'>
+    <collision name='collision'>
+      <pose>0 0 0 0 0 -1.57079632679</pose>
+      <geometry>
+        <mesh>
+          <scale>0.001 0.001 0.001</scale>
+          <uri>model://suv/meshes/suv.obj</uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name='visual'>
+      <pose>0 0 0 0 0 -1.57079632679</pose>
+      <geometry>
+        <mesh>
+          <scale>0.01 0.05 0.05</scale>
+          <uri>model://suv/meshes/suv.obj</uri>
+        </mesh>
+      </geometry>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
+  </link>
+  <pose>9.5 5 0.075 0 0 1.58</pose>
+  <self_collide>false</self_collide>
+</model>
 
-    <model name='coca_cola_6'>
-      <link name='link'>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <mass>0.39</mass>
-          <inertia>
-            <ixx>0.00058</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00058</iyy>
-            <iyz>0</iyz>
-            <izz>0.00019</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.0302</radius>
-              <length>0.1206</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='bodyMesh'>
-          <geometry>
-            <mesh>
-              <uri>model://coca_cola/meshes/coke.dae</uri>
-              <scale>17 17 17</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>9.6 8 0.07 0 0 1.8</pose>
-      <static>true</static>
-      <self_collide>false</self_collide>
-    </model>
+<model name='SUV_coke_6'>
+  <static>true</static>
+  <link name='link'>
+    <collision name='collision'>
+      <pose>0 0 0 0 0 -1.57079632679</pose>
+      <geometry>
+        <mesh>
+          <scale>0.001 0.001 0.001</scale>
+          <uri>model://suv/meshes/suv.obj</uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name='visual'>
+      <pose>0 0 0 0 0 -1.57079632679</pose>
+      <geometry>
+        <mesh>
+          <scale>0.01 0.05 0.05</scale>
+          <uri>model://suv/meshes/suv.obj</uri>
+        </mesh>
+      </geometry>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
+  </link>
+  <pose>9.6 8 0.07 0 0 1.57</pose>
+  <self_collide>false</self_collide>
+</model>
 
 
 
@@ -3487,44 +3586,7 @@
 
 
 
-    <!-- Radio towers along the west wall -->
-    <model name='radio_tower_1'>
-      <static>true</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <scale>0.01 0.01 0.01</scale>
-              <uri>model://radio_tower/meshes/radio_tower.dae</uri>
-            </mesh>
-          </geometry>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <scale>0.04 0.04 0.05</scale>
-              <uri>model://radio_tower/meshes/radio_tower.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <pose>0 0 0 0 0 0</pose>
-          <mass>1</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>-9.5 -7 0 0 0 0</pose>
-      <self_collide>false</self_collide>
-    </model>
+
 
     <model name='radio_tower_2'>
       <static>true</static>
@@ -3540,7 +3602,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <scale>0.045 0.045 0.055</scale>
+              <scale>0.065 0.065 0.065</scale>
               <uri>model://radio_tower/meshes/radio_tower.dae</uri>
             </mesh>
           </geometry>
@@ -3564,60 +3626,114 @@
       <self_collide>false</self_collide>
     </model>
 
-    <model name='radio_tower_3'>
-      <static>true</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <scale>0.01 0.01 0.01</scale>
-              <uri>model://radio_tower/meshes/radio_tower.dae</uri>
-            </mesh>
-          </geometry>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <scale>0.035 0.035 0.045</scale>
-              <uri>model://radio_tower/meshes/radio_tower.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <pose>0 0 0 0 0 0</pose>
-          <mass>1</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>-9.5 0 0 0 0 1.2</pose>
-      <self_collide>false</self_collide>
-    </model>
+<model name='mars_rover_on_wall_1'>
+  <static>true</static>
+  <link name='link'>
+    <visual name='visual'>
+      <geometry>
+        <mesh>
+          <uri>model://mars_rover/meshes/rover.dae</uri>
+        </mesh>
+      </geometry>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
+  </link>
+  <pose>-10 2 1.1 1.5708 0 1.5</pose>
+  <self_collide>false</self_collide>
+</model>
 
-    <model name='radio_tower_4'>
+
+<model name='mars_rover_on_wall_2'>
+  <static>true</static>
+  <link name='link'>
+    <visual name='visual'>
+      <geometry>
+        <mesh>
+          <uri>model://mars_rover/meshes/rover.dae</uri>
+        </mesh>
+      </geometry>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
+  </link>
+  <pose>-10 3.5 1 1.5708 0 1.5708</pose>
+  <self_collide>false</self_collide>
+</model>
+
+<model name='mars_rover_on_wall_3'>
+  <static>true</static>
+  <link name='link'>
+    <visual name='visual'>
+      <geometry>
+        <mesh>
+          <uri>model://mars_rover/meshes/rover.dae</uri>
+        </mesh>
+      </geometry>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <pose>0 0 0 0 0 0</pose>
+      <mass>1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <enable_wind>false</enable_wind>
+  </link>
+  <pose>-10 -2 1 1.5708 1.5708 1.5708</pose>
+  <self_collide>false</self_collide>
+</model>
+
+
+
+
+
+    <model name='collapsed_fire_station'>
       <static>true</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <scale>0.01 0.01 0.01</scale>
-              <uri>model://radio_tower/meshes/radio_tower.dae</uri>
+              <scale>0.4 0.02 0.3</scale>
+              <uri>model://collapsed_fire_station/meshes/collapsed_fire_station.dae</uri>
             </mesh>
           </geometry>
         </collision>
         <visual name='visual'>
           <geometry>
             <mesh>
-              <scale>0.05 0.05 0.06</scale>
-              <uri>model://radio_tower/meshes/radio_tower.dae</uri>
+              <scale>0.4 0.02 0.3</scale>
+              <uri>model://collapsed_fire_station/meshes/collapsed_fire_station.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -3636,7 +3752,7 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>-9.6 3.5 0 0 0 1.8</pose>
+      <pose>10 -4 0 0 0 1.5708</pose>
       <self_collide>false</self_collide>
     </model>
 
@@ -3654,10 +3770,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <scale>0.042 0.042 0.052</scale>
+              <scale>0.04 0.04 0.05</scale>
               <uri>model://radio_tower/meshes/radio_tower.dae</uri>
             </mesh>
           </geometry>
+          <material>
+            <ambient>0.65 0.15 0.7 1</ambient>   <!-- Light Purple -->
+            <diffuse>0.6 0.3 0.9 1</diffuse>
+          </material>
         </visual>
         <pose>0 0 0 0 0 0</pose>
         <inertial>
@@ -3674,10 +3794,9 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>-9.5 7 0 0 0 0.3</pose>
+      <pose>-9.5 7 0 0 0.25 0.3</pose>
       <self_collide>false</self_collide>
     </model>
-
 
 
 
@@ -3689,13 +3808,13 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.3 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
         </visual>
       </link>
-      <pose>5 3 0 0 0 1.5708</pose>
+      <pose>5 3 0 0 0 0</pose>
     </model>
 
     <model name="foldable_chair_2">
@@ -3704,13 +3823,13 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.3 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
         </visual>
       </link>
-      <pose>6 3 0 0 0 1.5708</pose>
+      <pose>6 3 0 0 0 0</pose>
     </model>
 
     <model name="foldable_chair_3">
@@ -3719,13 +3838,13 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.3 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
         </visual>
       </link>
-      <pose>7 3 0 0 0 1.5708</pose>
+      <pose>7 3 0 0 0 0</pose>
     </model>
 
 
@@ -3735,13 +3854,13 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.3 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
         </visual>
       </link>
-      <pose>5 3 0 0 0 1.5708</pose>
+      <pose>5 3 0 0 0 0</pose>
     </model>
 
     <model name="foldable_chair_5">
@@ -3750,13 +3869,13 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.3 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
         </visual>
       </link>
-      <pose>4 3 0 0 0 1.5708</pose>
+      <pose>4 3 0 0 0 0</pose>
     </model>
 
     <model name="foldable_chair_6">
@@ -3765,13 +3884,13 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.3 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
         </visual>
       </link>
-      <pose>8 3 0 0 0 1.5708</pose>
+      <pose>8 3 0 0 0 0</pose>
     </model>
 
 
@@ -3781,13 +3900,13 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.3 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
         </visual>
       </link>
-      <pose>9 3 0 0 0 1.5708</pose>
+      <pose>9 3 0 0 0 0</pose>
     </model>
 
     <model name="foldable_chair_8">
@@ -3802,7 +3921,7 @@
           </geometry>
         </visual>
       </link>
-      <pose>10 3 0 0 0 1.5708</pose>
+      <pose>10 3 0 0 0 0</pose>
     </model>
 
     <model name="foldable_chair_9">
@@ -3817,7 +3936,7 @@
           </geometry>
         </visual>
       </link>
-      <pose>3 3 0 0 0 1.5708</pose>
+      <pose>3 3 0 0 0 0</pose>
     </model>
 
 
@@ -3827,13 +3946,13 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.1 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
         </visual>
       </link>
-      <pose>2 3 0 0 0 1.5708</pose>
+      <pose>2 3 0 0 0 1</pose>
     </model>
 
 
@@ -3844,7 +3963,7 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.3 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
@@ -3860,7 +3979,7 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.3 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
@@ -3876,7 +3995,7 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <scale>0.15 0.1 0.1</scale>
+              <scale>0.15 0.3 0.2</scale>
               <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
             </mesh>
           </geometry>
@@ -3961,7 +4080,7 @@
     <visual name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>1 1 1.75</scale>
           <uri>model://brick_wall_2/brick_wall_2.dae</uri>
         </mesh>
       </geometry>
@@ -3969,7 +4088,7 @@
     <collision name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>1 1 1.75</scale>
           <uri>model://brick_wall_1/brick_wall_1.dae</uri>
         </mesh>
       </geometry>
@@ -4004,7 +4123,7 @@
     <visual name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>1 1 1.5</scale>
           <uri>model://brick_wall_2/brick_wall_2.dae</uri>
         </mesh>
       </geometry>
@@ -4012,7 +4131,7 @@
     <collision name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>1 1 1.5</scale>
           <uri>model://brick_wall_1/brick_wall_1.dae</uri>
         </mesh>
       </geometry>
@@ -4045,7 +4164,7 @@
     <visual name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>1 1 1.25</scale>
           <uri>model://brick_wall_2/brick_wall_2.dae</uri>
         </mesh>
       </geometry>
@@ -4053,7 +4172,7 @@
     <collision name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>1 1 1.25</scale>
           <uri>model://brick_wall_1/brick_wall_1.dae</uri>
         </mesh>
       </geometry>
@@ -4085,7 +4204,7 @@
     <visual name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>2 1 1</scale>
           <uri>model://brick_wall_2/brick_wall_2.dae</uri>
         </mesh>
       </geometry>
@@ -4093,7 +4212,7 @@
     <collision name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>2 1 1</scale>
           <uri>model://brick_wall_1/brick_wall_1.dae</uri>
         </mesh>
       </geometry>
@@ -4125,7 +4244,7 @@
     <visual name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>1 1 0.75</scale>
           <uri>model://brick_wall_2/brick_wall_2.dae</uri>
         </mesh>
       </geometry>
@@ -4133,7 +4252,7 @@
     <collision name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>1 1 0.75</scale>
           <uri>model://brick_wall_1/brick_wall_1.dae</uri>
         </mesh>
       </geometry>
@@ -4166,7 +4285,7 @@
     <visual name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>2 2 0.5</scale>
           <uri>model://brick_wall_2/brick_wall_2.dae</uri>
         </mesh>
       </geometry>
@@ -4174,7 +4293,7 @@
     <collision name='brick_wall_1'>
       <geometry>
         <mesh>
-          <scale>1 1 2</scale>
+          <scale>2 2 0.5</scale>
           <uri>model://brick_wall_1/brick_wall_1.dae</uri>
         </mesh>
       </geometry>
@@ -4199,6 +4318,154 @@
 
 
 
+
+
+
+    <model name="foldable_chair_18">
+      <static>true</static>
+      <link name="base_link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <scale>0.15 0.1 0.1</scale>
+              <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <pose>6 -4 0 0 0 1.5708</pose>
+    </model>
+
+    <model name="foldable_chair_19">
+      <static>true</static>
+      <link name="base_link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <scale>0.15 0.1 0.1</scale>
+              <uri>model://foldable_chair/mesh/foldable_chair.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <pose>5 -4 0 0 0 1.5708</pose>
+    </model>
+
+
+    <model name='Tree_20'>
+      <static>true</static>
+      <link name='Tree_1'>
+        <visual name='Tree_1'>
+          <geometry>
+            <mesh>
+              <scale>0.2 0.2 0.3</scale>
+              <uri>model://Tree_1/Tree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-2 -2 0 0 0 1.5708</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+
+
+    <model name='radio_tower_20'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>0.01 0.01 0.01</scale>
+              <uri>model://radio_tower/meshes/radio_tower.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.045 0.045 0.055</scale>
+              <uri>model://radio_tower/meshes/radio_tower.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-7.5 0 0 0 0 1.5708</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+
+ <model name='coca_cola_20'>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <mass>0.39</mass>
+          <inertia>
+            <ixx>0.00058</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00058</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.0302</radius>
+              <length>0.1206</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='bodyMesh'>
+          <geometry>
+            <mesh>
+              <uri>model://coca_cola/meshes/coke.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>4 6.5 0 0 0 1.5708</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
 
 
 
