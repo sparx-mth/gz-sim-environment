@@ -17,6 +17,7 @@ def generate_launch_description():
     pkg_project_gazebo = get_package_share_directory("vehicle_bringup")
     pkg_project_worlds = get_package_share_directory("gz_sim_worlds")
 
+
     # Setup to launch the simulator and Gazebo world
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(

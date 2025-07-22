@@ -62,7 +62,7 @@ class ColorFinder(Node):
         """Convert quaternion to yaw angle in radians"""
         quat = [q.x, q.y, q.z, q.w]
         r = R.from_quat(quat)
-        euler = r.as_euler('ZYX', degrees=False)  # Changed to ZYX for proper yaw extraction
+        euler = r.as_euler('ZYX', degrees=False
         return euler[0]  # yaw is the first component in ZYX
     
     def normalize_angle(self, angle_rad):
