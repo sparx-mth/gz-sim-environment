@@ -42,7 +42,7 @@ class ColorFinder(Node):
         self.ts = ApproximateTimeSynchronizer(
             [self.image_sub, self.pose_sub],
             queue_size=10,
-            slop=0.01  # max time difference allowed between messages
+            slop=0.1  # max time difference allowed between messages
         )
         self.ts.registerCallback(self.synced_callback)
 
